@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  ubuntu:
+    image: ubuntu:latest
+    container_name: ubuntu-container
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./ubuntu_data:/mnt/shared  # Mounts the local folder to Ubuntu
+

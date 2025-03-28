@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  cassandra:
+    image: cassandra:latest
+    container_name: cassandra_db
+    ports:
+      - "9042:9042"  # CQL native transport
+      - "7000:7000"  # Internode communication
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+    restart: unless-stopped
+volumes:
+  cassandra_data:
